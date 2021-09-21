@@ -11,7 +11,7 @@ function Form(props) {
     const formData = {
       method: method,
       url: e.target.url.value,
-      body: show ? e.target.textArea.value : null,
+      body: show ? e.target.textArea.value : "",
     };
 
     props.handleApiCall(formData);
