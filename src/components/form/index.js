@@ -27,17 +27,19 @@ function Form(props) {
         <label
           className="methods"
           onClick={(e) => {
-            setmethod(e.target.innerText);
-            for (const span of document.querySelectorAll("span.active")) {
-              span.classList.remove("active");
-            }
-            if (["PUT", "POST"].indexOf(e.target.innerText) >= 0) {
-              setShow(true);
-            } else {
-              setShow(false);
-            }
+            if (e.target.tagName == "SPAN") {
+              setmethod(e.target.innerText);
+              for (const span of document.querySelectorAll("span.active")) {
+                span.classList.remove("active");
+              }
+              if (["PUT", "POST"].indexOf(e.target.innerText) >= 0) {
+                setShow(true);
+              } else {
+                setShow(false);
+              }
 
-            e.target.className = "active";
+              e.target.className = "active";
+            }
           }}
         >
           <span className="active" id="get">
